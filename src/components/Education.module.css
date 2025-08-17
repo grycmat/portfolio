@@ -1,0 +1,47 @@
+.section {
+  padding: 6rem 0;
+  border-bottom: 1px solid var(--surface-color);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.educationItem {
+  background-color: var(--surface-color);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.educationItem:hover {
+  box-shadow: 0 5px 15px rgba(0, 168, 255, 0.2);
+}
+
+.educationItem h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.degree {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.period {
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
