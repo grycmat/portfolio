@@ -45,3 +45,49 @@
   color: rgba(255, 255, 255, 0.7);
   font-style: italic;
 }
+
+/* Print styles */
+@media print {
+  .section {
+    padding: 3mm 0 !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    page-break-inside: avoid;
+  }
+
+  .sectionTitle {
+    font-size: 18pt !important;
+    margin-bottom: 12pt !important;
+    color: #000000 !important;
+  }
+
+  .educationItem {
+    background-color: #f9f9f9 !important;
+    border: 1px solid #d0d0d0 !important;
+    padding: 10pt !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+
+  .educationItem:hover {
+    box-shadow: none !important;
+  }
+
+  .educationItem h3 {
+    font-size: 12pt !important;
+    margin-bottom: 4pt !important;
+    color: #0066cc !important;
+  }
+
+  .degree {
+    font-size: 10pt !important;
+    margin-bottom: 4pt !important;
+    color: #333333 !important;
+  }
+
+  .period {
+    font-size: 9pt !important;
+    color: #666666 !important;
+    font-style: italic !important;
+  }
+}

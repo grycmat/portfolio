@@ -34,43 +34,100 @@ ul {
   list-style: none;
 }
 
-/* Print styles */
+/* Print styles for CV/PDF generation */
 @media print {
-  @page { size: A4; margin: 12mm; }
+  @page { 
+    size: A4; 
+    margin: 15mm 15mm 20mm 15mm;
+  }
 
+  /* Color adjustments for print */
   :root { 
+    --primary-color: #0066cc;
+    --secondary-color: #000000;
     --background-color: #ffffff; 
-    --surface-color: #ffffff; 
-    --on-surface-color: #000000; 
+    --surface-color: #f5f5f5; 
+    --on-surface-color: #000000;
+    --on-primary-color: #ffffff;
   }
   
   html, body { 
     background: #ffffff !important; 
-    color: #000000 !important; 
+    color: #000000 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
   }
   
   body { 
     -webkit-print-color-adjust: exact; 
-    print-color-adjust: exact; 
+    print-color-adjust: exact;
+    color-adjust: exact;
   }
 
-  header, footer, .social-links, .cta-split,
-  #contact, .logo-img { 
+  /* Hide non-essential elements */
+  header, 
+  footer, 
+  nav,
+  .socialLinks,
+  .ctaSplit,
+  .ctaDivider,
+  #contact,
+  .logo-img,
+  .btn:not(.print-show) { 
     display: none !important; 
   }
 
+  /* Remove animations and transitions */
   *, *::before, *::after { 
     animation: none !important; 
-    transition: none !important; 
+    transition: none !important;
+    transform: none !important;
   }
 
+  /* Section adjustments */
   section { 
-    padding: 12mm 0; 
-    border: none; 
+    padding: 8mm 0 !important; 
+    border: none !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  section:first-of-type {
+    padding-top: 0 !important;
   }
   
   .container { 
-    padding: 0; 
-    max-width: 100%; 
+    padding: 0 !important; 
+    max-width: 100% !important; 
+  }
+
+  /* Typography for print */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+    color: #000000 !important;
+  }
+
+  p, ul, ol {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Links in print */
+  a {
+    color: #0066cc !important;
+    text-decoration: none !important;
+  }
+
+  /* Ensure images print properly */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Background colors for sections */
+  *[class*="surface"] {
+    background-color: #f9f9f9 !important;
   }
 }

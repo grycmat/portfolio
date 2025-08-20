@@ -147,3 +147,37 @@
     display: none;
   }
 }
+
+/* Print styles */
+@media print {
+  .hero {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .heroTitle {
+    font-size: 24pt !important;
+    margin-bottom: 0.5rem !important;
+    color: #000000 !important;
+  }
+
+  .heroSubtitle {
+    font-size: 14pt !important;
+    margin-bottom: 1rem !important;
+    color: #0066cc !important;
+  }
+
+  .typewriter {
+    border: none !important;
+    animation: none !important;
+    width: auto !important;
+    overflow: visible !important;
+  }
+
+  .socialLinks,
+  .ctaSplit {
+    display: none !important;
+  }
+}

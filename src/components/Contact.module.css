@@ -88,3 +88,10 @@
     padding: 0 1rem;
   }
 }
+
+/* Print styles - hide contact form for print */
+@media print {
+  .section {
+    display: none !important;
+  }
+}

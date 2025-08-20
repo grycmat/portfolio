@@ -53,3 +53,38 @@
     height: 200px;
   }
 }
+
+/* Print styles */
+@media print {
+  .section {
+    padding: 3mm 0 !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    page-break-inside: avoid;
+  }
+
+  .container {
+    grid-template-columns: 1fr !important;
+    gap: 8pt !important;
+  }
+
+  .sectionTitle {
+    font-size: 18pt !important;
+    margin-bottom: 8pt !important;
+    text-align: left !important;
+    color: #000000 !important;
+  }
+
+  .profileImg {
+    display: none !important;
+  }
+
+  .aboutText {
+    font-size: 10pt !important;
+    line-height: 1.5 !important;
+  }
+
+  .aboutText p {
+    margin-bottom: 6pt !important;
+    color: #333333 !important;
+  }
+}
