@@ -72,7 +72,7 @@ export const experience: TimelineItem[] = [
     roles: [
       {
         period: '2020–2023',
-        title: 'Angular Developer',
+        title: 'Team Leader',
         isPromotion: true,
         description: 'Resume generator (Angular + Material); AS400 warehouse system rewrite; Adobe AIR app rewrite; team lead mentoring developers.',
       },

@@ -72,7 +72,7 @@
 }
 
 .timelineItem::before {
-  content: attr(data-when);
+  /* content: attr(data-when);
   position: absolute;
   top: 10px;
   right: calc(-17px - 12ch);
@@ -87,8 +87,23 @@
   border-radius: 999px;
   font-weight: 700;
   font-size: 0.85rem;
+  color: var(--secondary-color); */
+  /* backdrop-filter: blur(6px); */
+}
+
+.whenPill {
+  display: inline;
+  padding: 10px 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 168, 255, 0.15),
+    rgba(255, 255, 255, 0.04)
+  );
+  border: 1px solid rgba(0, 168, 255, 0.35);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
   color: var(--secondary-color);
-  backdrop-filter: blur(6px);
 }
 
 .timelineItem:nth-child(odd) {
@@ -110,6 +125,7 @@
 }
 
 .timelineContent {
+  margin-top: 16px;
   padding: 20px 24px;
   background: linear-gradient(
     180deg,
@@ -216,7 +232,7 @@
   .timeline::after {
     left: 18px;
   }
-  
+
   .timelineItem,
   .timelineItem:nth-child(even) {
     width: 100%;
@@ -224,12 +240,12 @@
     padding-left: 48px;
     padding-right: 10px;
   }
-  
+
   .timelineItem::after {
     left: 6px;
     right: auto;
   }
-  
+
   .timelineItem::before,
   .timelineItem:nth-child(even)::before {
     left: 38px;

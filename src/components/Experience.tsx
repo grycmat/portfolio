@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { experience } from '../data/portfolio';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import styles from './Experience.module.css';
+import React from "react";
+import { motion } from "framer-motion";
+import { experience } from "../data/portfolio";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import styles from "./Experience.module.css";
 
 export const Experience: React.FC = () => {
   const { ref, controls } = useScrollAnimation();
@@ -29,8 +29,8 @@ export const Experience: React.FC = () => {
   };
 
   return (
-    <motion.section 
-      id="experience" 
+    <motion.section
+      id="experience"
       className={styles.section}
       ref={ref}
       animate={controls}
@@ -41,42 +41,47 @@ export const Experience: React.FC = () => {
         <h2 className={styles.sectionTitle}>Work Experience</h2>
         <motion.div className={styles.timeline} variants={containerVariants}>
           {experience.map((item, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               className={styles.timelineItem}
               data-when={item.period}
               variants={itemVariants}
             >
-              <motion.div 
+              <div className={styles.whenPill}>{item.period}</div>
+              <motion.div
                 className={styles.timelineContent}
                 whileHover={{ scale: 1.02 }}
               >
                 <h3 className={styles.company}>{item.company}</h3>
-                
+
                 {item.role && (
-                  <p className={styles.role}>
+                  <p className={styles.roleChip}>
                     <strong>{item.role}</strong>
                   </p>
                 )}
-                
+
                 {item.roles && (
                   <ul className={styles.timelineRoles}>
                     {item.roles.map((role, roleIndex) => (
                       <li key={roleIndex}>
                         <span className={styles.when}>{role.period}</span>
-                        <span className={`${styles.roleChip} ${role.isPromotion ? styles.promotion : ''}`}>
-                          {role.title} {role.isPromotion && '— Promotion'}
+                        <span
+                          className={`${styles.roleChip} ${
+                            role.isPromotion ? styles.promotion : ""
+                          }`}
+                        >
+                          {role.title} {role.isPromotion && "— Promotion"}
                         </span>
                         <div className={styles.desc}>{role.description}</div>
                       </li>
                     ))}
                   </ul>
                 )}
-                
+
                 {item.summary && (
                   <p className={styles.summary}>{item.summary}</p>
                 )}
-                
+
                 {item.bullets && (
                   <ul className={styles.bullets}>
                     {item.bullets.map((bullet, bulletIndex) => (
